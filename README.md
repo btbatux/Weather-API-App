@@ -42,8 +42,8 @@ Sınırlı İstek Hakkı: Her kullanıcı, 10 dakika içinde en fazla 10 istek y
 Veri Tabanı Entegrasyonu: Hava durumu verileri veri tabanına kaydedilir.
 Harici API Entegrasyonu: Harici bir API'den hava durumu verisi çekilir (eğer veri tabanında yoksa).
 
-## API Yanıtı Örneği (JSON)
-```
+> **Örnek JSON Cevabı:**
+```json
 {
   "data": {
     "time": "2024-09-10T17:56:00Z",
@@ -77,3 +77,4 @@ Harici API Entegrasyonu: Harici bir API'den hava durumu verisi çekilir (eğer v
     "type": "administrative"
   }
 }
+
