@@ -77,7 +77,3 @@ Harici API Entegrasyonu: Harici bir API'den hava durumu verisi çekilir (eğer v
     "type": "administrative"
   }
 }
-```
-
- 
-
