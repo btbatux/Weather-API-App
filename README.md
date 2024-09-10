@@ -5,7 +5,7 @@ eğer veri tabanında yoksa harici bir API'den çekilir. Uygulama hava durumu ve
 🗂️ Kullanılan Teknolojiler
 Java 11
 Spring Boot
-PostgreSQL
+H2
 Maven
 REST API
 ---
