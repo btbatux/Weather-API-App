@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:weatherdb
+
+    spring:
+      jpa:
+        hibernate:
+          ddl-auto: update
+
+
+
+  h2:
+    console:
+      enabled: true
+server:
+  port: 8088
+
+weather-stack:
+  api-url: "https://api.tomorrow.io/v4/weather/realtime?location="
+  api-key: "&apikey=95QrEEy0iBi21UvBgfnuav3I0uuMKE29"
