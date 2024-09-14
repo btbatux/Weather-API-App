@@ -7,7 +7,12 @@ import com.btbatux.weather.model.WeaterEntity;
 import com.btbatux.weather.repository.WeatherRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.annotation.PostConstruct;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.ResponseEntity;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -16,6 +21,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 
 @Service
+@CacheConfig(cacheNames = {"weathers"})
 public class WeatherService {
 
 
@@ -32,6 +38,7 @@ public class WeatherService {
 
 
     //Önce repo'yu sorgula yoksa apiye git, repoya kaydet tekrar geri buraya return et.
+    @Cacheable(key ="#city")
     public WeatherDto getWeatherByCityName(String city) {
         Optional<WeaterEntity> weaterEntityOptional = weatherRepository.findFirstByRequestedCityNameOrderByUpdatedTimeDesc(city);
         //Sorgu boş gelirse
@@ -58,6 +65,14 @@ public class WeatherService {
 
         } catch (JsonProcessingException e) {
             throw new RuntimeException(e);}}
+
+
+
+    @CacheEvict(allEntries = true)
+    @PostConstruct
+    @Scheduled(cron = "0 0 0/6 * * ?")
+    public void clearCache(){}
+
 
 
     //Sorgulanan şehrin hava durumu bilgisini database'e gönder.

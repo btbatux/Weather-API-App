@@ -8,8 +8,6 @@ spring:
         hibernate:
           ddl-auto: update
 
-
-
   h2:
     console:
       enabled: true
@@ -19,3 +17,12 @@ server:
 weather-stack:
   api-url: "https://api.tomorrow.io/v4/weather/realtime?location="
   api-key: "&apikey=95QrEEy0iBi21UvBgfnuav3I0uuMKE29"
+
+
+resilience4j:
+  ratelimiter:
+    instances:
+      user-limit:
+        limit-for-period: 10
+        limit-refresh-period: 1m
+        timeout-duration: 10s
