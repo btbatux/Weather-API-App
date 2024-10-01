@@ -3,6 +3,7 @@ Bu **Java Spring Boot** uygulaması, belirli lokasyonlar için hava durumu veril
 eğer veri tabanında yoksa harici bir API'den çekilir. Uygulama hava durumu verilerini her **6 saatte bir** günceller ve her kullanıcıya **10 dakikada en fazla 10 sorgu** hakkı verir.
 
 🗂️ Kullanılan Teknolojiler
+
 Java 11
 Spring Boot
 H2
