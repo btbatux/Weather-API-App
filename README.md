@@ -1,4 +1,4 @@
-![Weather API Uygulaması](423.png)
+![Weather API Uygulaması](diagram.png)
 
 # 🌦️ Weather API Application
 Bu **Java Spring Boot** uygulaması, belirli lokasyonlar için hava durumu verilerini sağlar. Hava durumu verileri öncelikle veri tabanından sorgulanır, 
